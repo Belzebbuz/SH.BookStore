@@ -1,0 +1,38 @@
+{
+    "Serilog": {
+        "Using": [],
+        "Enrich": [
+            "FromLogContext",
+            "WithMachineName",
+            "WithProcessId",
+            "WithThreadId",
+            "WithHangfireContext"
+        ],
+        "MinimumLevel": {
+            "Default": "Information",
+            "Override": {
+                "Hangfire": "Warning",
+                "Microsoft": "Error",
+                "Microsoft.Hosting.Lifetime": "Information",
+                "System": "Information"
+                //"Microsoft.EntityFrameworkCore": "Information"
+            }
+        },
+        "Properties": {
+            "Application": "MES.Server.Production"
+        },
+        "WriteTo": [
+            {
+
+                "Name": "File",
+                "Args": {
+                    "path": "Logs/logs.json",
+                    "formatter": "Serilog.Formatting.Json.JsonFormatter, Serilog",
+                    "rollingInterval": "Day",
+                    "restrictedToMinimumLevel": "Information",
+                    "retainedFileCountLimit": 5
+                }
+            }
+        ]
+    }
+}

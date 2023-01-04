@@ -1,0 +1,16 @@
+services:
+  - name: shbookstore-identity
+    project: SH.BookStore/SH.Bookstore.Identity.Host/SH.Bookstore.Identity.Host.csproj
+    bindings:
+      - port: 6010
+    env:
+      - name: ASPNETCORE_ENVIRONMENT
+        value: development
+
+  - name: shbookstore-books
+    project: SH.BookStore/SH.Bookstore.Books.Host/SH.Bookstore.Books.Host.csproj
+    bindings:
+      - port: 6020
+    env:
+      - name: ASPNETCORE_ENVIRONMENT
+        value: development

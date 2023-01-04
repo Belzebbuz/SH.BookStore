@@ -1,0 +1,40 @@
+services:
+  - name: sh-bookstore-gateway
+    project: SH.BookStore/SH.Bookstore.Gateway.Host/SH.Bookstore.Gateway.Host.csproj
+    bindings:
+      - port: 6000
+    env:
+      - name: ASPNETCORE_ENVIRONMENT
+        value: development
+
+  - name: sh-bookstore-identity
+    project: SH.BookStore/SH.Bookstore.Identity.Host/SH.Bookstore.Identity.Host.csproj
+    bindings:
+      - port: 6010
+    env:
+      - name: ASPNETCORE_ENVIRONMENT
+        value: development
+
+  - name: sh-bookstore-books
+    project: SH.BookStore/SH.Bookstore.Books.Host/SH.Bookstore.Books.Host.csproj
+    bindings:
+      - port: 6020
+    env:
+      - name: ASPNETCORE_ENVIRONMENT
+        value: development
+
+  - name: sh-bookstore-orders
+    project: SH.BookStore/SH.Bookstore.Orders.Host/SH.Bookstore.Orders.Host.csproj
+    bindings:
+      - port: 6030
+    env:
+      - name: ASPNETCORE_ENVIRONMENT
+        value: development
+
+  - name: sh-bookstore-whs
+    project: SH.BookStore/SH.Bookstore.Whs.Host/SH.Bookstore.Whs.Host.csproj
+    bindings:
+      - port: 6040
+    env:
+      - name: ASPNETCORE_ENVIRONMENT
+        value: development
